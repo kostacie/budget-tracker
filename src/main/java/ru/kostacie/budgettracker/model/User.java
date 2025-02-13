@@ -2,7 +2,6 @@ package ru.kostacie.budgettracker.model;
 
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
@@ -11,7 +10,7 @@ import java.util.UUID;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue//(generator = "UUID")
+    @GeneratedValue
     @UuidGenerator
     private UUID id;
 
