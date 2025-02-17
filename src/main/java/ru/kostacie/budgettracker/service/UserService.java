@@ -3,6 +3,7 @@ package ru.kostacie.budgettracker.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.kostacie.budgettracker.dto.UserDto;
 import ru.kostacie.budgettracker.model.User;
 import ru.kostacie.budgettracker.repository.UserRepository;
 
@@ -14,7 +15,12 @@ import java.util.UUID;
 public class UserService {
     private final UserRepository userRepository;
 
-    public User createUser(User user) {
+    public User createUser(UserDto request) {
+        User user = User.builder()
+                .username(request.getUsername())
+                .password(request.getPassword())
+                .email(request.getEmail())
+                .build();
         return userRepository.save(user);
     }
 

@@ -5,9 +5,6 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <include file="/db/changelog/changes/001_create_incomes_table.xml"/>
-    <include file="/db/changelog/changes/002_create_expenses_table.xml"/>
-
     <changeSet id="1" author="kostacie">
         <createTable tableName="users">
             <column name="id" type="uuid">
@@ -24,5 +21,9 @@
             </column>
         </createTable>
     </changeSet>
+
+    <include file="/db/changelog/changes/001_create_incomes_table.xml"/>
+    <include file="/db/changelog/changes/002_create_expenses_table.xml"/>
+    <include file="/db/changelog/changes/003_create_category_table_and_insert_types.xml"/>
 
 </databaseChangeLog>
